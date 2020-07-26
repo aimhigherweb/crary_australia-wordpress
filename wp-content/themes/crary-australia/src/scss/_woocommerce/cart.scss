@@ -1,0 +1,49 @@
+a.remove {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1;
+}
+
+.woocommerce-cart-form {
+	width: auto;
+	max-width: 100%;
+
+	img {
+		max-height: 100px;
+	}
+
+	.product-name {
+		a {
+			color: $primary;
+		}
+	}
+
+	.quantity {
+		display: block;
+		float: none;
+
+		input[type="number"] {
+			font-size: 1.4em;
+			padding: 5px 0 5px 5px;
+			width: auto;
+		}
+	}
+
+	.actions {
+		input[type="text"] {
+			width: auto;
+		}
+	}
+
+	button {
+		background: #fff;
+		color: $primary;
+		font-weight: normal;
+
+		&:active, &:hover, &:focus {
+			background: $primary;
+			color: #fff;
+		}
+	}
+}

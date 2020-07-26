@@ -1,0 +1,43 @@
+/*
+Theme Name: AimHigher WordPress Template
+Theme URI: https://github.com/aimhigherweb/wordpress
+Author: AimHigher Web Design
+Author URI: https://aimhigherweb.design
+Version: 1.0
+*/
+
+@import './_variables.scss';
+@import './_global.scss';
+
+/*
+*
+* Partial Styles
+*
+*/
+@import './_partials/content.scss';
+@import './_partials/header.scss';
+@import './_partials/footer.scss';
+
+/*
+*
+* Layout Styles
+*
+*/
+@import './_layouts/blog.scss';
+
+/*
+*
+* Block Styles
+*
+*/
+@import './_blocks/team.scss';
+@import './_blocks/faq.scss';
+@import './_blocks/banner.scss';
+@import './_blocks/testimonials.scss';
+
+/*
+*
+* WooCommerce Styles
+*
+*/
+@import './_woocommerce/main.scss';

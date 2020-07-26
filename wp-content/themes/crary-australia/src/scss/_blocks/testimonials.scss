@@ -1,0 +1,173 @@
+.testimonials {
+	margin: 20px auto;
+	padding: 30px 0;
+	width: 90vw;
+	max-width: 1000px;
+
+	blockquote {
+		border: 10px solid $primary;
+		display: none;
+		font-size: 1em;
+		padding: 20px 10px;
+		position: relative;
+		width: 100%;
+	}
+
+	cite {
+		display: block;
+		font-size: 0.8em;
+		text-align: center;
+
+		&:before,
+		&:after {
+			color: $secondary;
+			position: absolute;
+			font-size: 8em;
+		}
+
+		&:before {
+			content: '❝';
+			top: -0.5em;
+			left: -0.2em;
+		}
+
+		&:after {
+			content: '❞';
+			bottom: -1em;
+			right: -0.2em;
+		}
+	}
+
+	input {
+		&:checked {
+			& + label {
+				& + blockquote {
+					display: block;
+				}
+			}
+		}
+	}
+
+	label {
+		font-size: 0;
+		height: var(--radioWidth);
+		order: 2;
+		width: var(--radioWidth);
+	}
+
+	.profile {
+		$size: 50px;
+
+		border: 2px solid $secondary;
+		border-radius: 50%;
+		height: $size;
+		position: absolute;
+		bottom: calc(-1 * (5px + (#{$size} / 2)));
+		left: calc(50% - (#{$size} / 2));
+		width: $size;
+	}
+
+	@include grid {
+		display: grid;
+		grid-template-columns: repeat(var(--testimonials), 1fr);
+		grid-template-rows: max-content auto;
+		grid-row-gap: 50px;
+		grid-column-gap: 20px;
+		align-items: center;
+		justify-items: center;
+
+		blockquote {
+			display: block;
+			grid-column: 1 / -1;
+			grid-row: 1;
+			margin: 0;
+			visibility: hidden;
+		}
+
+		input {
+			&:checked {
+				& + label {
+					& + blockquote {
+						visibility: visible;
+					}
+				}
+			}
+		}
+
+		label {
+			order: 2;
+
+			&:first-of-type {
+				justify-self: end;
+
+				&:last-of-type {
+					justify-self: center;
+				}
+			}
+
+			&:last-of-type {
+				justify-self: start;
+			}
+		}
+	}
+
+	& + .block {
+		padding-top: 0;
+	}
+}
+
+@media(min-width: 480px) {
+	.testimonials {
+		padding: 50px 0;
+	
+		blockquote {
+			font-size: 1.3em;
+			padding: 30px 20px;
+		}
+	
+		.profile {
+			$size: 70px;
+	
+			height: $size;
+			bottom: calc(-1 * (5px + (#{$size} / 2)));
+			left: calc(50% - (#{$size} / 2));
+			width: $size;
+		}
+	
+	}
+}
+
+@media(min-width:768px) {
+	.testimonials {
+		$size: 100px;
+	
+		blockquote {
+			font-size: 1.4em;
+			padding: 40px 30px;
+		}
+	
+		.profile {
+			height: $size;
+			bottom: calc(-1 * (5px + (#{$size} / 2)));
+			left: calc(50% - (#{$size} / 2));
+			width: $size;
+		}
+	}
+}
+
+@media(min-width: 1200px) {
+	.testimonials {
+		$size: 150px;
+	
+		blockquote {
+			padding: 40px 30px;
+		}
+	
+		.profile {
+			height: $size;
+			bottom: calc(-1 * (5px + (#{$size} / 2)));
+			left: calc(50% - (#{$size} / 2));
+			width: $size;
+		}
+	}
+}

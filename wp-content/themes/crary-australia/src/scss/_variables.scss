@@ -1,0 +1,89 @@
+// Colours
+$primary: #007cbb;
+	$primary_light_90: #1989c2;
+	$primary_light_75: #409dcc;
+	$primary_light_50: #80bedd;
+	$primary_light_25: #bfdeee;
+	$primary_light_10: #e6f2f8;
+
+	$primary_dark_90: #0070a8;
+	$primary_dark_75: #005d8c;
+	$primary_dark_50: #003e5e;
+	$primary_dark_25: #001f2f;
+	$primary_dark_10: #000c13;
+
+$secondary: #00acbb;
+	$secondary_light_90: #19b4c2;
+	$secondary_light_75: #40c1cc;
+	$secondary_light_50: #80d6dd;
+	$secondary_light_25: #bfeaee;
+	$secondary_light_10: #e6f7f8;
+
+	$secondary_dark_90: #009ba8;
+	$secondary_dark_75: #00818c;
+	$secondary_dark_50: #00565e;
+	$secondary_dark_25: #002b2f;
+	$secondary_dark_10: #001113;
+
+$neutral: #4c4d4e;
+	$neutral_light_90: #5e5f60;
+	$neutral_light_75: #797a7a;
+	$neutral_light_50: #a6a6a7;
+	$neutral_light_25: #d2d3d3;
+	$neutral_light_10: #ededed;
+
+	$neutral_dark_90: #444546;
+	$neutral_dark_75: #393a3b;
+	$neutral_dark_50: #262727;
+	$neutral_dark_25: #131314;
+	$neutral_dark_10: #080808;
+
+$good: #46be2d;
+$warning: #FF7900;
+$fail: #b50400;
+$main: #302e2c;
+
+
+$gradient_linear: linear-gradient(
+	90deg, 
+	rgb(95,195,228) 0%, 
+	rgb(192,121,160) 53%, 
+	rgb(229,93,135) 100%
+);
+
+//Fonts
+@font-face {
+	font-family: 'Recursive';
+	src: url('./src/fonts/recursive.ttf') format('truetype');
+}
+
+$font_regular: 'Recursive', Arial, sans-serif;
+$font_headings: 'Recursive', Arial, sans-serif;
+
+// Extends
+%cover {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+%p-edges {
+	p {
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// Mixins
+@mixin grid() {
+	@supports(grid-template-areas: '.') {
+		@content;
+	}
+}

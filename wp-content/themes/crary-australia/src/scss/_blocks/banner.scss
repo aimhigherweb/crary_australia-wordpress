@@ -1,0 +1,93 @@
+.banner {
+	background: var(--bannerImage);
+	background-size: 100% auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	margin-left: -5vw;
+	min-height: 200px;
+	padding: 10px;
+	text-align: center;
+	width: 100vw;
+
+	blockquote {
+		border: none;
+		color: #fff;
+		margin: 0;
+		margin-top: 30px;
+		padding: 0;
+		text-shadow: 1px 1px 1px $neutral;
+
+		&:after {
+			content: normal;
+		}
+	}
+
+	.cta {
+		background: $primary;
+		color: #fff;
+		border-radius: 10px;
+		display: inline-block;
+		margin: 50px auto;
+		padding: 10px 15px;
+		width: auto;
+
+		&:active, &:hover, &:focus {
+			background: #fff;
+			color: $primary;
+		}
+	}
+}
+
+@media(min-width: 460px) {
+	.banner {
+		background-size: cover;
+	}
+}
+
+@media(min-width: 700px) {
+	.banner {
+		padding: 50px 5vw;
+		text-align: left;
+
+		blockquote {
+			margin-top: 0;
+			line-height: 1.5;
+			text-align: left;
+			max-width: 300px;
+		}
+
+		.cta {
+			margin-top: 50px;
+			padding: 15px 25px;
+		}
+	}
+}
+
+@media(min-width: 1000px) {
+	.banner {
+		min-height: 300px;
+		padding: 80px 5vw;
+
+		blockquote {
+			font-size: 1.4em;
+			max-width: 400px;
+		}
+	}
+}
+
+@media(min-width: 1300px) {
+	.banner {
+		min-height: 400px;
+		margin-left: calc((600px - 50vw) - 5vw);
+		padding: 80px calc((50vw - 600px) + 5vw);
+		width: 110vw;
+	}
+}
+
+@media(min-width: 1350px) {
+	.banner {
+		margin-left: calc((600px - 50vw));
+		padding: 80px calc((50vw - 600px));
+		width: 100vw;
+	}
+}

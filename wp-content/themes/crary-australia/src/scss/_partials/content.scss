@@ -1,0 +1,21 @@
+header, main, footer {
+	margin: 0 auto;
+	padding: 10px 0;
+	width: 90vw;
+	max-width: 1200px;
+}
+
+.home {
+	h1 {
+		position: absolute;
+		right: -200vw;
+	}
+}
+
+@include grid {
+	body {
+		display: grid;
+		grid-template-rows: auto 1fr auto;
+		min-height: 100vh;
+	}
+}

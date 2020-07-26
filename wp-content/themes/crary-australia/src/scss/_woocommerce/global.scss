@@ -1,0 +1,15 @@
+a.button, button, button.button, button.button.alt {
+	background: $primary;
+	border: 2px solid $primary;
+	color: #fff;
+	width: auto;
+
+	&:active, &:hover, &:focus {
+		background: #fff;
+		color: $primary;
+	}
+}
+
+.woocommerce-message {
+	border-top-color: $primary;
+}

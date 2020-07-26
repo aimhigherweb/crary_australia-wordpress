@@ -1,0 +1,56 @@
+.woocommerce-ordering {
+	select {
+		border: 1px solid $primary;
+		padding: 5px 10px;
+	}
+}
+
+ul.products {
+	display: flex;
+	margin: -20px;
+
+	li.product {
+		margin: 20px;
+		max-width: 300px;
+
+		a {
+			border: 2px solid transparent;
+			display: block;
+		
+			&:active, &:hover, &:focus {
+				background: $primary_light_10;
+				border-color: $primary;
+			}
+		}
+
+		.onsale {
+			margin: 0;
+			top: -1.5em;
+			right: -1.5em;
+		}
+
+		.price {
+			color: $primary;
+			font-size: 1.2em;
+
+			del {
+				font-size: 0.8em;
+			}
+
+			ins {
+				background: $secondary;
+				border-radius: 10px;
+				color: $main;
+				padding: 10px;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+span.onsale {
+	background: $secondary;
+	line-height: 3.5;
+	height: 4em;
+	width: 4em;
+}

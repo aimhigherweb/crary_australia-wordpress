@@ -1,0 +1,66 @@
+.testimonial {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	grid-template-areas: 
+		'nameLabel imgLabel'
+		'name img'
+		'compLabel img'
+		'comp img'
+		'quoteLabel quoteLabel'
+		'quote quote'
+		'. remove';
+
+
+	label {
+		display: block;
+		font-weight: bold;
+
+		&[for="name"] {
+			grid-area: nameLabel;
+		}
+
+		&[for="company"] {
+			grid-area: compLabel;
+		}
+
+		&[for="img"] {
+			grid-area: imgLabel;
+		}
+
+		&[for="quote"] {
+			grid-area: quoteLabel;
+		}
+	}
+
+	.name {
+		grid-area: name;
+	}
+
+	.company {
+		grid-area: comp;
+	}
+
+	.image {
+		grid-area: img;
+	}
+
+	.quote {
+		border: 2px solid $secondary;
+		border-radius: 10px;
+		grid-area: quote;
+		padding: 10px;
+	}
+
+	.remove {
+		grid-area: remove;
+	}
+
+	button {
+		height: auto;
+
+		img {
+			height: 100px;
+			width: 100px;
+		}
+	}
+}

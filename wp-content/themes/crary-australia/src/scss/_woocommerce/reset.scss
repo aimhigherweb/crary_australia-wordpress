@@ -1,0 +1,12 @@
+ul.products {
+	li.product {
+		clear: none;
+		float: none;
+		margin: 0;
+		width: auto;
+	}
+
+	&:before, &:after {
+		content: normal;
+	}
+}

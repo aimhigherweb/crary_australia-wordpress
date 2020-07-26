@@ -1,0 +1,15 @@
+.team {
+	display: flex;
+	flex-wrap: wrap;
+
+	.profile {
+		border: 2px solid $primary;
+		min-width: 200px;
+	}
+
+	figcaption {
+		border: none;
+		padding: 5px 10px;
+		text-align: center;
+	}
+}

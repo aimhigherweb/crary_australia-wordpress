@@ -1,0 +1,12 @@
+.content .woocommerce {
+	@import './reset.scss';
+	@import './global.scss';
+	/* Shop Styles */
+	@import './shop.scss';
+	/* Cart Styles */
+	@import './cart.scss';
+
+	div.single-product {
+		@import './product.scss';
+	}
+}
