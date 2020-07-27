@@ -18,6 +18,19 @@
     }
     add_action( 'after_setup_theme', 'custom_logo_setup' );
 
+    // Second logo option
+    function aimhigher_customizer_setting($wp_customize) {
+        $wp_customize->add_setting('custom_light_logo');
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_light_logo', array(
+            'label' => 'Alternative Light Logo',
+            'section' => 'title_tagline',
+            'settings' => 'custom_light_logo',
+            'priority' => 8
+        )));
+    }
+    
+    add_action('customize_register', 'aimhigher_customizer_setting');
+
 
     //Allow using SVGs
     // Allow SVG

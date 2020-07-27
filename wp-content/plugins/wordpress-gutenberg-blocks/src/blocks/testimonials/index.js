@@ -25,12 +25,6 @@ const Testimonials = () => {
 						selector: 'cite .company',
 						source: 'text'
 					},
-					image: {
-						type: 'string',
-						selector: 'img',
-						source: 'attribute',
-						attribute: 'src'
-					},
 					quote: {
 						type: 'string',
 						selector: '.quote',
@@ -53,45 +47,38 @@ const Testimonials = () => {
 					quote: '',
 				})
 
-				props.setAttributes({testimonials})
+				props.setAttributes({ testimonials })
 			},
-			removeTestimonial = (index) => {
-				const testimonials = [...props.attributes.testimonials]
+				removeTestimonial = (index) => {
+					const testimonials = [...props.attributes.testimonials]
 
-				testimonials.splice(index, 1)
-				
-				props.setAttributes({testimonials})
-			},
-			nameChange = (name, index) => {
-				const testimonials = [...props.attributes.testimonials]
+					testimonials.splice(index, 1)
 
-				testimonials[index].name = name
+					props.setAttributes({ testimonials })
+				},
+				nameChange = (name, index) => {
+					const testimonials = [...props.attributes.testimonials]
 
-				props.setAttributes({testimonials})
-			},
-			companyChange = (company, index) => {
-				const testimonials = [...props.attributes.testimonials]
+					testimonials[index].name = name
 
-				testimonials[index].company = company
+					props.setAttributes({ testimonials })
+				},
+				companyChange = (company, index) => {
+					const testimonials = [...props.attributes.testimonials]
 
-				props.setAttributes({testimonials})
-			},
-			quoteChange = (quote, index) => {
-				const testimonials = [...props.attributes.testimonials]
+					testimonials[index].company = company
 
-				testimonials[index].quote = quote
+					props.setAttributes({ testimonials })
+				},
+				quoteChange = (quote, index) => {
+					const testimonials = [...props.attributes.testimonials]
 
-				props.setAttributes({testimonials})
-			},
-			imageChange = (image, index) => {
-				const testimonials = [...props.attributes.testimonials]
+					testimonials[index].quote = quote
 
-				testimonials[index].image = image.url
+					props.setAttributes({ testimonials })
+				}
 
-				props.setAttributes({testimonials})
-			}
-
-			if(props.attributes.testimonials.length) {
+			if (props.attributes.testimonials.length) {
 				testimonialFields = props.attributes.testimonials.map((teamMember, index) => {
 					let image = props.attributes.testimonials[index].image
 					return (
@@ -100,36 +87,25 @@ const Testimonials = () => {
 							<TextControl
 								className="name"
 								value={props.attributes.testimonials[index].name}
-								onChange={(name) => {nameChange(name, index)}}
+								onChange={(name) => { nameChange(name, index) }}
 							/>
 							<label htmlFor="comp">Company</label>
 							<TextControl
 								className="company"
 								value={props.attributes.testimonials[index].company}
-								onChange={(company) => {companyChange(company, index)}}
-							/>
-							<label htmlFor="img">Image</label>
-							<MediaUpload
-								onSelect={(newprofile) => {imageChange(newprofile, index)}}
-								allowedTypes="image"
-								value={ image == undefined ? 'Select Image' : image }
-								render={ ( { open } ) => (
-									<Button onClick={ open } className="image">
-										{ image == undefined ? 'Upload Profile Image' : <img src={ image } /> }
-									</Button>
-								) }
+								onChange={(company) => { companyChange(company, index) }}
 							/>
 							<label htmlFor="quote">Quote</label>
 							<RichText
 								tagName="div"
 								className="quote"
-								onChange={(quote) => {quoteChange(quote, index)}}
+								onChange={(quote) => { quoteChange(quote, index) }}
 								value={props.attributes.testimonials[index].quote}
 								multiline="p"
 							/>
 							<Button
 								className="remove"
-								onClick={() => {removeTestimonial(index)}}
+								onClick={() => { removeTestimonial(index) }}
 							>
 								Delete Testimonial
 							</Button>
@@ -137,7 +113,7 @@ const Testimonials = () => {
 					)
 				})
 			}
-			
+
 			return (
 				<div className="testimonials" id="block-editable-box">
 					{testimonialFields}
@@ -147,23 +123,22 @@ const Testimonials = () => {
 				</div>
 			);
 		},
-	
+
 		save(props) {
 			const testimonials = props.attributes.testimonials.length;
 
-			let styles = {'--testimonials': testimonials.toString()}
+			let styles = { '--testimonials': testimonials.toString() }
 
 			return (
 				<div className="testimonials" style={styles}>
-                    {props.attributes.testimonials.map((t, index) => {
+					{props.attributes.testimonials.map((t, index) => {
 						return (
 							<>
 								<input type="radio" name="testimonials" id={t.name} checked={index == 0 ? true : false} />
 								<label htmlFor={t.name}>{t.name}</label>
 								<blockquote>
-									<RichText.Content tagName="div" className="quote" value={t.quote}/>
+									<RichText.Content tagName="div" className="quote" value={t.quote} />
 									<cite><span className="name">{t.name}</span> – <span className="company">{t.company}</span></cite>
-									{t.image && <img className="profile" src={t.image} />}
 								</blockquote>
 							</>
 						)

@@ -1,39 +1,62 @@
 .banner {
-	background: var(--bannerImage);
-	background-size: 100% auto;
-	background-position: center center;
-	background-repeat: no-repeat;
 	margin-left: -5vw;
 	min-height: 200px;
-	padding: 10px;
+	padding: 0;
 	text-align: center;
 	width: 100vw;
 
+	img {
+		width: 100vw;
+	}
+
 	blockquote {
 		border: none;
-		color: #fff;
+		color: $neutral;
 		margin: 0;
-		margin-top: 30px;
 		padding: 0;
-		text-shadow: 1px 1px 1px $neutral;
 
-		&:after {
-			content: normal;
+		strong {
+			background: $primary;
 		}
 	}
 
+	.head {
+		font-size: 1.5em;
+
+		&:after {
+			content: '.';
+			color: $primary;
+			font-size: 2em;
+		}
+	}
+
+	.ctas {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+
 	.cta {
-		background: $primary;
-		color: #fff;
-		border-radius: 10px;
+		--cta_text: #{$neutral};
+
+		background: var(--cta_colour);
+		color: var(--cta_text);
+		border-color: var(--cta_colour);
 		display: inline-block;
-		margin: 50px auto;
+		margin: 20px auto;
 		padding: 10px 15px;
 		width: auto;
 
 		&:active, &:hover, &:focus {
-			background: #fff;
-			color: $primary;
+			background: var(--cta_text);
+			color: var(--cta_colour);
+		}
+
+		&[data-colour="#000000"] {
+			--cta_text: #{$primary};
 		}
 	}
 }

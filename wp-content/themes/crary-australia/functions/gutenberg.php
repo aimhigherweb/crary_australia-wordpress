@@ -18,17 +18,12 @@ function aimhigher_add_custom_gutenberg_color_palette() {
 			[
 				'name'  => 'Primary',
 				'slug'  => 'primary',
-				'color' => '#007cbb',
-			],
-			[
-				'name'  => 'Secondary',
-				'slug'  => 'seconday',
-				'color' => '#00acbb',
+				'color' => '#ffd600',
 			],
 			[
 				'name'  => 'Neutral',
 				'slug'  => 'neutral',
-				'color' => '#4c4d4e',
+				'color' => '#000000',
 			],
 			[
 				'name'  => 'White',
@@ -36,18 +31,6 @@ function aimhigher_add_custom_gutenberg_color_palette() {
 				'color' => '#ffffff',
 			],
 		]
-	);
-
-	add_theme_support(
-		'editor-gradient-presets',
-		array(
-			array(
-				'name'     => 'Blue to Aqua',
-				'gradient' => 'linear-gradient(90deg, rgb(95,195,228) 0%, rgb(192,121,160) 53%, rgb(229,93,135) 100%)',
-				'slug'     => 'blue-to-aqua'
-			),
-			
-		)
 	);
 }
 add_action( 'after_setup_theme', 'aimhigher_add_custom_gutenberg_color_palette' );

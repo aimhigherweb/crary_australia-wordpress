@@ -1,5 +1,5 @@
 {
-  "name": "aimhigher-wordpress",
+  "name": "crary-wordpress",
   "version": "1.0.0",
   "description": "Custom WordPress Template Starter for AimHigher",
   "repository": {
@@ -8,7 +8,8 @@
   },
   "scripts": {
     "start": "gulp watch",
-    "build": "gulp build"
+    "build": "gulp build",
+    "sass": "gulp sassy"
   },
   "author": "AimHigher Web Design",
   "devDependencies": {

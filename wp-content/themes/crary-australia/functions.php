@@ -36,4 +36,19 @@
     
     // Add new custom image sizes
     add_image_size( 'med-thumb', 300, 300, true );
+
+    // Add New Widget Area
+    function crary_widgets_init() {
+        register_sidebar(array(
+            'name' => 'Footer Contact',
+            'id' => 'footer-contact',
+        ));
+    }
+    add_action('widgets_init', 'crary_widgets_init');
+
+    // Add SEOPress Title Tags
+    function seopress_theme_slug_setup() {
+        add_theme_support( 'title-tag' );
+    }
+    add_action( 'after_setup_theme', 'seopress_theme_slug_setup' );
 ?>

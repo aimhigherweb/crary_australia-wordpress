@@ -9,7 +9,6 @@ html, body {
 
 body {
 	--primary: #{$primary};
-	--secondary: #{$secondary};
 	--neutral: #{$neutral};
 	--primary_light: #{$primary_light_25};
 
@@ -30,31 +29,31 @@ h2,
 h3,
 h4,
 h5 {
+	background: $primary;
+	color: $neutral;
 	font-family: $font_headings;
+	padding: 5px 10px;
 }
 
 h1 {
-	color: $primary_dark_50;
+	background: $neutral;
+	color: $primary;
 	font-size: 2.5em;
 }
 
 h2 {
-	color: $primary_dark_50;
-	font-size: 2em;
+	font-size: 1.9em;
 }
 
 h3 {
-	color: $primary_dark_75;
 	font-size: 1.8em;
 }
 
 h4 {
-	color: $primary_dark_25;
 	font-size: 1.3em;
 }
 
 h5 {
-	color: $primary_dark_25;
 	font-size: 1.2em;
 }
 
@@ -65,7 +64,7 @@ p {
 }
 
 a {
-	color: $secondary;
+	color: $primary_dark_75;
 	padding: 10px;
 	text-decoration: underline;
 	text-decoration-skip-ink: auto;
@@ -73,7 +72,7 @@ a {
 	&:active,
 	&:hover,
 	&:focus {
-		background-color: $secondary;
+		background-color: $primary_dark_75;
 		color: $main;
 		text-decoration: none;
 		outline: none;
@@ -101,7 +100,7 @@ svg {
 
 figcaption {
 	border: none;
-	border-left: 3px solid $secondary;
+	border-left: 3px solid $primary;
 	color: $primary_dark_90;
 }
 
@@ -237,15 +236,15 @@ button,
 	}
 
 	&.secondary {
-		background: $secondary;
-		border-color: $secondary;
-		color: #fff;
+		background: $neutral;
+		border-color: $neutral;
+		color: $primary;
 
 		&:active,
 		&:hover,
 		&:focus {
-			background: #fff;
-			color: $secondary;
+			background: $primary;
+			color: $neutral;
 		}
 	}
 }

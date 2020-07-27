@@ -16,27 +16,22 @@ const colourContainer = () => {
 		edit(props) {
 			const colours = [
 				{
-					name: 'Blue',
-					slug: 'blue',
-					color: '#007cbb',
+					name: 'Yellow',
+					slug: 'yellow',
+					color: '#ffd600',
 				},
 				{
-					name: 'Aqua',
-					slug: 'aqua',
-					color: '#00acbb',
-				},
-				{
-					name: 'Grey',
-					slug: 'grey',
-					color: '#4c4d4e'
+					name: 'Black',
+					slug: 'black',
+					color: '#000000',
 				},
 			];
 
 			let colour = props.attributes.colour,
-			styles = {}
-			
-			if(colour) {
-				styles = {'--background': colour }
+				styles = {}
+
+			if (colour) {
+				styles = { '--background': colour }
 			}
 
 			return (
@@ -48,30 +43,30 @@ const colourContainer = () => {
 								colors={colours}
 								value={colour}
 								disableCustomColors='true'
-								onChange={ (e) => {
-									props.setAttributes({colour: e})
-								} }
+								onChange={(e) => {
+									props.setAttributes({ colour: e })
+								}}
 							/>
 						</InspectorControls>
 					}
-					<InnerBlocks/>
+					<InnerBlocks />
 				</div>
 			);
 		},
-	
-	save(props) {
-		let colour = props.attributes.colour,
-			styles = {}
-			
-			if(colour) {
-				styles = {'--background': colour }
+
+		save(props) {
+			let colour = props.attributes.colour,
+				styles = {}
+
+			if (colour) {
+				styles = { '--background': colour }
 			}
-		
-		return (
-			<div className="colour-container" style={styles}>
-				<InnerBlocks.Content/>
-			</div>
-		);
+
+			return (
+				<div className="colour-container" style={styles}>
+					<InnerBlocks.Content />
+				</div>
+			);
 
 		},
 	});

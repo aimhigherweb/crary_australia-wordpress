@@ -1,6 +1,6 @@
 /*
-Theme Name: AimHigher WordPress Template
-Theme URI: https://github.com/aimhigherweb/wordpress
+Theme Name: Crary Australia WordPress Template
+Theme URI: https://github.com/aimhigherweb/crary_australia-wordpress
 Author: AimHigher Web Design
 Author URI: https://aimhigherweb.design
 Version: 1.0
@@ -34,10 +34,4 @@ Version: 1.0
 @import './_blocks/faq.scss';
 @import './_blocks/banner.scss';
 @import './_blocks/testimonials.scss';
-
-/*
-*
-* WooCommerce Styles
-*
-*/
-@import './_woocommerce/main.scss';
+@import './_blocks/containers.scss';

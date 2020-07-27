@@ -3,16 +3,15 @@ header {
 	align-items: center;
 	justify-content: space-between;
 
-	.site-logo {
+	.logo {
 		border: 3px solid transparent;
 		display: block;
 		text-align: center;
+		flex-shrink: 1;
 
 		img, svg {
-			min-height: 60px;
-			max-height: 100px;
-			width: auto;
-			max-width: 80vw;
+			width: 70vw;
+			max-width: 200px;
 		}
 
 		&:active, &:hover, &:focus {
@@ -34,12 +33,17 @@ header {
 			ul {
 				display: block;
 			}
+
+			.hamburger {
+				background: $neutral;
+				color: $primary;
+			}
 		}
 
 		a {
 			background: #fff;
-			border-top: 3px solid $secondary;
-			color: $primary;
+			border-top: 3px solid $primary;
+			color: $neutral;
 			display: block;
 			font-weight: bold;
 			padding: 15px 20px;
@@ -49,21 +53,21 @@ header {
 			max-width: 400px;
 	
 			&:active, &:hover, &:focus {
-				background: $secondary_light_10;
+				background: $primary_light_10;
 			}
 		}
 	
 		li {
 			&:last-child {
 				a {
-					border-bottom: 3px solid $secondary;
+					border-bottom: 3px solid $primary;
 				}
 			}
 	
-			&.current_page_item {
+			&.current_page_item:not(.menu-item-93) {
 				a {
-					background: $primary_light_10;
-					color: $secondary;
+					background: $neutral;
+					color: $primary;
 				}
 			}
 
@@ -88,8 +92,9 @@ header {
 }
 
 .hamburger {
+	background: #fff;
 	border: none;
-	border-radius: 50%;
+	color: $neutral;
 	margin: 0;
 	padding: 20px;
 
@@ -128,9 +133,17 @@ header {
 	}
 
 	header {
+		justify-content: center;
 		flex-wrap: wrap;
 
 		nav {
+
+			&.active {
+				ul {
+					display: flex;
+				}
+			}
+
 			ul {
 				display: flex;
 				position: static;
@@ -138,18 +151,18 @@ header {
 
 			a {
 				border: none;
-				border-bottom: 3px solid transparent;
-				padding: 10px 15px;
+				padding: 10px 5px;
+				font-weight: normal;
 				width: auto;
 
 				&:active, &:hover, &:focus {
-					color: $primary;
-					border-color: $primary;
+					color: $neutral;
+					background: $primary;
 				}
 			}
 
 			li {
-				padding: 0 10px;
+				padding: 0;
 
 				&:last-child:not(.current_page_item) {
 					a {
@@ -157,12 +170,48 @@ header {
 					}
 				}
 
-				&.current_page_item {
+				&.current_page_item:not(.menu-item-93) {
 					a {
-						background: none;
-						border-color: $secondary;
+						background: $neutral;
 					}
 				}
+			}
+		}
+	}
+}
+
+@media(min-width: 55em) {
+	header {
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+@media(min-width: 60em) {
+	header {
+		.logo {
+			img, svg {
+				max-width: 250px;
+			}
+		}
+	}
+}
+
+@media(min-width: 70em) {
+	header {
+		nav {
+			a {
+				padding: 10px 15px;
+			}
+		}
+	}
+}
+
+@media(min-width: 80em) {
+	header {
+		.logo {
+			img, svg {
+				max-width: 300px;
 			}
 		}
 	}

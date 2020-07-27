@@ -15,15 +15,13 @@
 
         <link href="<?php echo get_template_directory_uri(); ?>/style.css" rel="stylesheet" />
         
-        <title>AimHigher</title>
-        <meta name="description" content="WordPress Template" />
 
         <?php wp_head(); ?>
     </head>
 
 <body class="<?php if (is_front_page()) {echo 'home';} ?>">
     <header>
-        <a href="/" class="site-logo">
+        <a href="/" class="logo">
             <?php
             $logo = wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full')[0];
 
@@ -50,7 +48,7 @@
         	'theme_location' => 'main_menu',
         	'container' => 'nav',
         	'container_class' => 'menu main',
-        	'items_wrap' => $menu_toggle . '<ul id="%1$s" data-test="true" class="%2$s">%3$s</ul>',
+        	'items_wrap' => $menu_toggle . '<ul id="%1$s" data-test="true" class="%2$\">%3$s</ul>',
         ));
         ?>
     </header>
