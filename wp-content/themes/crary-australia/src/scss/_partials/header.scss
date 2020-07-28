@@ -2,8 +2,21 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	height: 120px;
+
+	&:before {
+		content: '';
+		background: rgba(#fff, 0.7);
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 120px;
+		z-index: -1;
+	}
 
 	.logo {
+		background: none;
 		border: 3px solid transparent;
 		display: block;
 		text-align: center;
@@ -22,6 +35,7 @@ header {
 
 	nav {
 		flex-shrink: 0;
+		z-index: 20;
 
 		ul {
 			display: none;
@@ -64,27 +78,10 @@ header {
 				}
 			}
 	
-			&.current_page_item:not(.menu-item-93) {
+			&.current_page_item:not(.menu-item-type-custom) {
 				a {
 					background: $neutral;
 					color: $primary;
-				}
-			}
-
-			&.cart {
-				a {
-					color: transparent;
-					font-size: 0;
-
-					&:before {
-						background: url('./src/img/cart.svg');
-						background-size: contain;
-						background-repeat: no-repeat;
-						content: '';
-						display: block;
-						height: 20px;
-						width: 20px;
-					}
 				}
 			}
 		}
@@ -92,7 +89,7 @@ header {
 }
 
 .hamburger {
-	background: #fff;
+	background: transparent;
 	border: none;
 	color: $neutral;
 	margin: 0;
@@ -135,8 +132,10 @@ header {
 	header {
 		justify-content: center;
 		flex-wrap: wrap;
+		padding-top: 30px;
 
 		nav {
+			// width: 100%;
 
 			&.active {
 				ul {
@@ -146,10 +145,12 @@ header {
 
 			ul {
 				display: flex;
+				justify-content: space-between;
 				position: static;
 			}
 
 			a {
+				background: transparent;
 				border: none;
 				padding: 10px 5px;
 				font-weight: normal;
@@ -164,13 +165,13 @@ header {
 			li {
 				padding: 0;
 
-				&:last-child:not(.current_page_item) {
+				&:last-child {
 					a {
 						border: 0;
 					}
 				}
 
-				&.current_page_item:not(.menu-item-93) {
+				&.current_page_item:not(.menu-item-type-custom) {
 					a {
 						background: $neutral;
 					}
@@ -180,26 +181,45 @@ header {
 	}
 }
 
-@media(min-width: 55em) {
+@media(min-width: 45em) {
 	header {
-		align-items: center;
-		justify-content: space-between;
+		nav {
+			a {
+				padding: 10px;
+			}
+		}
 	}
 }
 
+
 @media(min-width: 60em) {
 	header {
-		.logo {
-			img, svg {
-				max-width: 250px;
+		flex-wrap: nowrap;
+		align-items: center;
+		justify-content: space-between;
+
+		nav {			
+			a {
+				padding: 10px 5px;
 			}
+		}
+
+		.logo {
+			margin-right: 30px;
 		}
 	}
 }
 
 @media(min-width: 70em) {
 	header {
+
+		.logo {
+			margin-right: 50px;
+		}
+
 		nav {
+		flex-grow: 1;
+
 			a {
 				padding: 10px 15px;
 			}
@@ -210,9 +230,19 @@ header {
 @media(min-width: 80em) {
 	header {
 		.logo {
+			margin-right: 100px;
+
 			img, svg {
 				max-width: 300px;
 			}
+		}
+	}
+}
+
+@media(min-width: 90em) {
+	header {
+		.logo {
+			margin-right: 200px;
 		}
 	}
 }

@@ -1,8 +1,8 @@
-header, main, footer {
+header, main {
 	margin: 0 auto;
-	padding: 10px 0;
+	padding: 10px 0 0;
 	width: 90vw;
-	max-width: 1200px;
+	max-width: 1800px;
 }
 
 .home {
@@ -17,5 +17,54 @@ header, main, footer {
 		display: grid;
 		grid-template-rows: auto 1fr auto;
 		min-height: 100vh;
+	}
+}
+
+main {
+	li {
+		padding: 5px 0;
+	}
+}
+
+.brands {
+	$border: 5px solid $primary;
+
+	
+	margin: 0;
+	padding: 0;
+	max-width: 800px;
+	margin: 0 auto 80px;
+
+	border-top: $border;
+	border-right: $border;
+
+	li {
+		border-bottom: $border;
+		border-left: $border;
+		color: #fff;
+		display: flex;
+		font-size: 1.5em;
+		font-weight: bold;
+		align-items: center;
+		justify-content: space-between;
+		list-style: none;
+		list-style-position: inside;
+		padding: 5px 20px;
+		margin: 0;
+
+		&:after {
+			content: '✓';
+			color: $primary;
+			border-left: $border;
+			margin-left: 20px;
+			padding: 5px 20px 5px 40px;
+		}
+	}
+}
+
+@media(min-width: 50em) {
+	.brands {
+		columns: 2;
+		column-gap: 0;
 	}
 }

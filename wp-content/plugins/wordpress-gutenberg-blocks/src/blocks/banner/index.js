@@ -47,9 +47,9 @@ const Banner = () => {
 			},
 			image: {
 				type: 'string',
-				selector: 'img',
+				selector: '.banner',
 				source: 'attribute',
-				attribute: 'src'
+				attribute: 'data-image'
 			},
 		},
 		edit(props) {
@@ -174,9 +174,12 @@ const Banner = () => {
 			let banner = props.attributes.image,
 				styles = {}
 
+			if (banner) {
+				styles = { '--bannerImage': `url(${banner})` }
+			}
+
 			return (
-				<div className="banner" style={styles}>
-					<img src={banner} />
+				<div className="banner" style={styles} data-image={banner}>
 					<blockquote>
 						<p className="head">{props.attributes.bannerHeading}</p>
 						<RichText.Content tagName="div" className="text" value={props.attributes.bannerText} />

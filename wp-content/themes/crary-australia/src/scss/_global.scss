@@ -29,20 +29,38 @@ h2,
 h3,
 h4,
 h5 {
-	background: $primary;
 	color: $neutral;
 	font-family: $font_headings;
-	padding: 5px 10px;
+	
+	&.has-text-align-center {
+		text-align: center;
+		margin: 0.8em auto;
+	}
 }
 
 h1 {
 	background: $neutral;
 	color: $primary;
 	font-size: 2.5em;
+	padding: 5px 10px;
 }
 
 h2 {
-	font-size: 1.9em;
+	font-size: 2em;
+	position: relative;
+	display: inline-block;
+
+	&:after {
+		background: $primary;
+		content: '';
+		display: block;
+		height: 10px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0em;
+		z-index: -1;
+	}
 }
 
 h3 {
@@ -64,24 +82,43 @@ p {
 }
 
 a {
-	color: $primary_dark_75;
-	padding: 10px;
+	color: $neutral;
+	background: $primary_light_75;
+	padding: 0;
 	text-decoration: underline;
 	text-decoration-skip-ink: auto;
 
 	&:active,
 	&:hover,
 	&:focus {
-		background-color: $primary_dark_75;
-		color: $main;
+		background-color: none;
 		text-decoration: none;
 		outline: none;
 	}
 }
 
 blockquote {
-	border-left: 5px solid $primary;
+	border: none;
 	font-family: $font_headings;
+	font-weight: bold;
+	font-size: 1.5em;
+	display: inline-block;
+	margin: 20px;
+	padding: 0;
+	position: relative;
+	width: auto;
+
+	&:after {
+		background: $primary;
+		content: '';
+		display: block;
+		height: 10px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 1em;
+		z-index: -1;
+	}
 
 	cite {
 		font-size: 0.8em;
@@ -98,10 +135,16 @@ svg {
 	max-width: 100%;
 }
 
+figure {
+	display: flex;
+}
+
 figcaption {
 	border: none;
-	border-left: 3px solid $primary;
-	color: $primary_dark_90;
+	background: $primary_light_25;
+	color: $neutral;
+	padding: 10px 30px 10px 10px;
+	font-size: 0.8em;
 }
 
 nav {
@@ -114,6 +157,7 @@ nav {
 }
 
 form {
+	background: $neutral_light_10;
 	padding: 20px;
 	width: 100%;
 	max-width: 400px;
@@ -132,6 +176,11 @@ form {
 		&::placeholder {
 			color: $primary_dark_25;
 		}
+	}
+
+
+	button {
+		background: $primary;
 	}
 }
 
@@ -219,6 +268,7 @@ button,
 .wp-block-button__link {
 	background: none;
 	border: 2px solid $primary;
+	border-radius: 0;
 	color: $primary;
 	cursor: pointer;
 	display: block;

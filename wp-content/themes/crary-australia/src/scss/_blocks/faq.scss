@@ -1,9 +1,10 @@
 .faqs {
 	list-style: none;
-	margin: 0;
+	margin: 0 0 60px;
 	padding: 0;
 
 	summary {
+		background: $primary;
 		cursor: pointer;
 		font-weight: bold;
 		padding: 10px;
@@ -13,19 +14,5 @@
 		padding: 10px 10px 10px 30px;
 
 		@extend %p-edges;
-	}
-
-	details {
-		border: 2px solid $primary_light_25;
-		
-		
-	}
-
-	li {
-		&:not(:last-of-type) {
-			details {
-				border-bottom: none;
-			}
-		}
 	}
 }

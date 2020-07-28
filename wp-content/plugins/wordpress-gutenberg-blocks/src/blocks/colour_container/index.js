@@ -21,9 +21,19 @@ const colourContainer = () => {
 					color: '#ffd600',
 				},
 				{
+					name: 'Light Yellow',
+					slug: 'light_yellow',
+					color: '#ffeb80'
+				},
+				{
 					name: 'Black',
 					slug: 'black',
 					color: '#000000',
+				},
+				{
+					name: 'Light Grey',
+					slug: 'light_grey',
+					color: '#e6e6e6'
 				},
 			];
 

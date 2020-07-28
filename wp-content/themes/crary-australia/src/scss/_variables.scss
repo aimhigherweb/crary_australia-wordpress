@@ -23,26 +23,35 @@ $main: #000000;
 
 //Fonts
 @font-face {
-	font-family: 'Berthold Akzidenz Grotesk';
-	font-weight: 300;
-	src: url('./src/fonts/Akzidenz-grotesk-light.ttf') format('truetype');
+	font-family: 'Open Sans';
+	font-weight: 400;
+	font-style: normal;
+	src: url('./src/fonts/OpenSans-Regular.ttf') format('truetype');
 }
 
 @font-face {
-	font-family: 'Berthold Akzidenz Grotesk';
+	font-family: 'Open Sans';
+	font-weight: 400;
+	font-style: italic;
+	src: url('./src/fonts/OpenSans-Italic.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-weight: 700;
+	font-style: normal;
+	src: url('./src/fonts/OpenSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Open Sans';
 	font-weight: 700;
 	font-style: italic;
-	src: url('./src/fonts/Berthold-Akzidenz-Grotesk-Bold-Italic.otf') format('opentype');
+	src: url('./src/fonts/OpenSans-BoldItalic.ttf') format('truetype');
 }
 
-@font-face {
-	font-family: 'Berthold Akzidenz Grotesk';
-	font-weight: 700;
-	src: url('./src/fonts/Berthold-Akzidenz-Grotesk-Bold.otf') format('opentype');
-}
-
-$font_regular: 'Berthold Akzidenz Grotesk', Arial, sans-serif;
-$font_headings: 'Berthold Akzidenz Grotesk', Arial, sans-serif;
+$font_regular: 'Open Sans', Arial, sans-serif;
+$font_headings: 'Open Sans', Arial, sans-serif;
 
 // Extends
 %cover {

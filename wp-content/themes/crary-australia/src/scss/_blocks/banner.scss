@@ -1,33 +1,60 @@
 .banner {
 	margin-left: -5vw;
 	min-height: 200px;
-	padding: 0;
+	padding: 0 0 20px;
 	text-align: center;
 	width: 100vw;
 
-	img {
+	&:before {
+		background: var(--bannerImage);
+		background-size: cover;
+		background-position: center;
+		content: '';
+		display: block;
+		margin-top: -140px;
+		height: 500px;
+		position: relative;
 		width: 100vw;
+		z-index: -5;
 	}
 
 	blockquote {
 		border: none;
 		color: $neutral;
-		margin: 0;
-		padding: 0;
+		display: block;
+		font-size: 0.9em;
+		font-weight: normal;
+		padding: 0 20px;
+		margin-top: 50px;
 
-		strong {
-			background: $primary;
+		&:after {
+			content: normal;
 		}
 	}
 
 	.head {
-		font-size: 1.5em;
+		font-weight: bold;
+		font-size: 2em;
+		line-height: 1;
+		margin: 0;
+		position: relative;
+		display: inline;
 
 		&:after {
-			content: '.';
-			color: $primary;
-			font-size: 2em;
+			background: $primary;
+			content: '';
+			display: block;
+			height: 10px;
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: -0em;
+			z-index: -1;
 		}
+	}
+
+	.text {
+		margin-top: 40px;
 	}
 
 	.ctas {
@@ -45,6 +72,7 @@
 		background: var(--cta_colour);
 		color: var(--cta_text);
 		border-color: var(--cta_colour);
+		border-radius: 10px;
 		display: inline-block;
 		margin: 20px auto;
 		padding: 10px 15px;
@@ -61,56 +89,99 @@
 	}
 }
 
-@media(min-width: 460px) {
+
+@media(min-width: 40em) {
 	.banner {
-		background-size: cover;
+		// padding-bottom: 20px;
 	}
 }
 
-@media(min-width: 700px) {
+@media(min-width: 50em) {
 	.banner {
-		padding: 50px 5vw;
 		text-align: left;
+		position: relative;
+		padding-top: 50px;
+		// padding-bottom: 0;
+
+		&:before {
+			left: calc(400px + 5vw);
+			position: absolute;
+			top: -170px;
+			bottom: 0;
+			margin-top: 0;
+			height: auto;
+		}
+
+		blockquote, .ctas {
+			margin-left: 5vw;
+			width: 400px;
+		}
 
 		blockquote {
 			margin-top: 0;
 			line-height: 1.5;
 			text-align: left;
-			max-width: 300px;
+			padding: 0;
+		}
+
+		.head {
+			font-size: 2.5em;
+		}
+
+		.text {
+			font-size: 0.9em;
+			padding-right: 50px;
+		}
+
+		.ctas {
+			justify-content: flex-start;
 		}
 
 		.cta {
-			margin-top: 50px;
-			padding: 15px 25px;
+			margin-right: 10px;
+			// padding: 15px 25px;
 		}
 	}
 }
 
-@media(min-width: 1000px) {
+@media(min-width: 55em) {
 	.banner {
-		min-height: 300px;
-		padding: 80px 5vw;
+		blockquote {
+			padding: 0;
+		}
+	}
+}
+
+@media(min-width: 60em) {
+	.banner {
+
+		&:before {
+			// left: calc(400px + 5vw);
+			top: -170px;
+		}
+
+		blockquote, .ctas {
+			// width: 400px;
+		}
+	}
+}
+
+@media(min-width: 70em) {
+	.banner {
+		margin: 0 auto;
+		width: 90vw;
+		min-height: 550px;
+
+		&:before {
+			left: calc(400px);
+		}
+
+		blockquote, .ctas {
+			margin-left: 0;
+		}
 
 		blockquote {
-			font-size: 1.4em;
-			max-width: 400px;
+			margin-top: 30px;
 		}
-	}
-}
-
-@media(min-width: 1300px) {
-	.banner {
-		min-height: 400px;
-		margin-left: calc((600px - 50vw) - 5vw);
-		padding: 80px calc((50vw - 600px) + 5vw);
-		width: 110vw;
-	}
-}
-
-@media(min-width: 1350px) {
-	.banner {
-		margin-left: calc((600px - 50vw));
-		padding: 80px calc((50vw - 600px));
-		width: 100vw;
 	}
 }
