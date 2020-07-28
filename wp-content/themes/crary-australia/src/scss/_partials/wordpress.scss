@@ -1,0 +1,113 @@
+main {
+	--button_background: #{$neutral};
+	--button_border: var(--button_background);
+	--button_text: #{$primary};
+
+	.wp-block-buttons {
+		display: flex;
+		justify-content: center;
+
+		.wp-block-button__link {
+			background: var(--button_background);
+			border-width: 2px;
+			border-style: solid;
+			border-color: var(--button_border);
+			color: var(--button_text);
+			border-radius: 10px;
+
+			&:active, &:hover, &:focus {
+				background: var(--button_text);
+				color: var(--button_background);
+			}
+		}
+	}
+
+	.wp-block-image figcaption {
+		margin: 0;
+	}
+
+	.blocks-gallery-grid  {
+		.blocks-gallery-item {
+			figure {
+				display: block;
+				position: relative;
+			}
+
+			figcaption {
+				background: rgba(#fff, 0.8);
+				bottom: 20px;
+				color: $neutral;
+				left: 0;
+				right: 20%;
+				padding: 10px 10px 10px 20%;
+				text-align: left;
+				width: 80%;
+			}
+		}
+	}
+
+	div.wpforms-container-full {
+		.wpforms-form {
+			button[type="submit"] {
+				background: $primary;
+				padding: 10px 20px;
+			}
+
+			input.wpforms-field-medium {
+				max-width: unset;
+			}
+		}
+
+		form {
+			max-width: unset;
+		}
+	}
+}
+
+.wp-block-button__link {
+	&.has-primary-background-color {
+		--button_background: #{$primary};
+	}
+
+	&.has-neutral-background-color {
+		--button_background: #{$neutral};
+	}
+
+	&.has-white-background-color {
+		--button_background: #fff;
+		--button_border: var(--button_text);
+	}
+
+	&.has-neutral-color {
+		--button_text: #{$neutral};
+	}
+
+	&.has-primary-color {
+		--button_text: #{$primary};
+	}
+
+	&.has-white-color {
+		--button_text: #fff;
+	}
+}
+
+figure {
+	&.wp-block-embed {
+		margin: 0;
+		
+		iframe {
+			max-width: 100%;
+		}
+	}
+
+	&.wp-block-image.size-large {
+		margin: 1em 0;
+	}
+
+	&.wp-block-gallery {
+		.blocks-gallery-grid, .blocks-gallery-item, figure {
+			align-items: center;
+			align-content: center;
+		}
+	}
+}

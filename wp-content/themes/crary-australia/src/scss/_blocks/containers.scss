@@ -1,0 +1,50 @@
+.colour-container, .image-container {
+	position: relative;
+	width: 100vw;
+	margin-left: -5vw;
+	padding: 50px 5vw;
+
+	&:before {
+		content: '';
+		z-index: -1;
+
+		@extend %cover;
+	}
+}
+
+.colour-container {
+	
+
+	&:before {
+		background: var(--background);
+	}
+
+	h2, h3, h4 {
+		background: none;
+		color: inherit;
+	}
+
+	&.dark {
+		color: $primary;
+
+		h2 {
+			&:after {
+				background: #fff;
+			}
+		}
+	}
+}
+
+.image-container {
+	&:before {
+		background: var(--backgroundImage);
+		background-size: cover;
+		background-position: center;
+	}
+}
+
+@media(min-width: 2000) {
+	.colour-container, .image-container {
+		margin-left: calc(900px - 50vw);
+	}
+}

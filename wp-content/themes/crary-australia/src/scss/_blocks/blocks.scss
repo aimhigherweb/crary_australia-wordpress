@@ -1,0 +1,23 @@
+.blocks {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom: 50px;
+}
+
+.block {
+	background: rgba($neutral_light_10, 0.8);
+	border-radius: 10px;
+	margin: 10px;
+	padding: 20px;
+	max-width: 300px;
+	text-align: center;
+
+	img {
+		height: 200px;
+	}
+
+	h3 {
+		font-size: 1.2em;
+	}
+}
