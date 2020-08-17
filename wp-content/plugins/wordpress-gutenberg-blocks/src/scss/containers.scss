@@ -2,3 +2,22 @@
 	border: 10px solid var(--background);
 	padding: 20px;
 }
+
+.image-container {
+	background: rgba(#fff, 0.5);
+	position: relative;
+	
+	&:before {
+		background: var(--backgroundImage);
+		background-size: contain;
+		background-position: center top;
+		background-repeat: no-repeat;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+	}
+}

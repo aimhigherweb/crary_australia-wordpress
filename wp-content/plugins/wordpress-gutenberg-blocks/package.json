@@ -4,8 +4,7 @@
   "description": "",
   "scripts": {
     "start": "wp-scripts start --config webpack.config.js",
-    "build": "gulp sassy && wp-scripts build",
-    "sass": "gulp watch"
+    "build": "wp-scripts build"
   },
   "keywords": [],
   "author": "Amy Kapernick <amy@aimhigherweb.design> (https://aimhigherweb.design)",

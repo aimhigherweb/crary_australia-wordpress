@@ -83,7 +83,6 @@ p {
 
 a {
 	color: $neutral;
-	background: $primary_light_75;
 	padding: 0;
 	text-decoration: underline;
 	text-decoration-skip-ink: auto;
@@ -137,6 +136,7 @@ svg {
 
 figure {
 	display: flex;
+	flex-wrap: wrap;
 }
 
 figcaption {
@@ -145,6 +145,18 @@ figcaption {
 	color: $neutral;
 	padding: 10px 30px 10px 10px;
 	font-size: 0.8em;
+	min-width: 200px;
+	flex-grow: 1;
+}
+
+@media(min-width: 1000px) {
+	figure {
+		flex-wrap: nowrap;
+	}
+
+	figcaption {
+		max-width: 200px;
+	}
 }
 
 nav {

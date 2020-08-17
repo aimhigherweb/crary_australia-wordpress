@@ -34,22 +34,25 @@
 
 	.head {
 		font-weight: bold;
-		font-size: 2em;
+		font-size: 1.7em;
 		line-height: 1;
 		margin: 0;
-		position: relative;
-		display: inline;
 
-		&:after {
-			background: $primary;
-			content: '';
-			display: block;
-			height: 10px;
-			position: absolute;
-			left: 0;
-			right: 0;
-			bottom: -0em;
-			z-index: -1;
+		mark {
+			background: none;
+			position: relative;
+
+			&:after {
+				background: $primary;
+				content: '';
+				display: block;
+				height: 10px;
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: -0em;
+				z-index: -1;
+			}
 		}
 	}
 
@@ -125,7 +128,7 @@
 		}
 
 		.head {
-			font-size: 2.5em;
+			font-size: 2.2em;
 		}
 
 		.text {

@@ -12,7 +12,7 @@ const Banner = () => {
 			bannerHeading: {
 				type: 'string',
 				selector: '.banner blockquote .head',
-				source: 'text'
+				source: 'html'
 			},
 			bannerText: {
 				type: 'string',
@@ -181,7 +181,7 @@ const Banner = () => {
 			return (
 				<div className="banner" style={styles} data-image={banner}>
 					<blockquote>
-						<p className="head">{props.attributes.bannerHeading}</p>
+						<p className="head" dangerouslySetInnerHTML={{ __html: props.attributes.bannerHeading }} />
 						<RichText.Content tagName="div" className="text" value={props.attributes.bannerText} />
 					</blockquote>
 					{props.attributes.cta &&

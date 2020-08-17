@@ -28,7 +28,7 @@ const colourContainer = () => {
 				{
 					name: 'Black',
 					slug: 'black',
-					color: '#000000',
+					color: '#191919',
 				},
 				{
 					name: 'Light Grey',

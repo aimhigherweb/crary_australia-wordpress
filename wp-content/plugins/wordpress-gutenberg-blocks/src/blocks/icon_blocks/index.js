@@ -67,7 +67,7 @@ const iconBlocks = () => {
 				contentChange = (text, index) => {
 					const blocks = [...props.attributes.blocks]
 
-					blocks[index].content = text
+					blocks[index].text = text
 
 					props.setAttributes({ blocks })
 				},
@@ -137,7 +137,7 @@ const iconBlocks = () => {
 						<div key={index} className="block">
 							<img src={block.icon} />
 							<h3>{block.heading}</h3>
-							<RichText.Content tagName="div" className="content" value={block.content} />
+							<RichText.Content tagName="div" className="content" value={block.text} />
 						</div>
 					))}
 				</div>
